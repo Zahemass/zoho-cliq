@@ -5,4 +5,9 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-module.exports = { openai };
+// 🔥 Export the instance directly (not as object)
+module.exports = openai;
+
+// 🔥 Also export as named export for flexibility
+module.exports.openai = openai;
+module.exports.client = openai;
